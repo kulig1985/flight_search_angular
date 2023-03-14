@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  all_flight_result : "http://127.0.0.1:2233/api/getFlightResultByFsinIn?fsinId=2"
 };
 
 /*

@@ -1,1 +1,18 @@
-<p>main works!</p>
+<dx-data-grid
+#allFlightResult
+[showBorders]="true"
+[showRowLines]="true"
+[rowAlternationEnabled]="true"
+[dataSource]="allFlightResultDataSource"
+[columnAutoWidth]="true"
+[allowColumnResizing]="true"
+[allowColumnReordering]="true">
+
+
+<dxo-load-panel [enabled]="false"></dxo-load-panel> 
+<dxo-filter-row [visible]="true"></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+
+<dxo-export [enabled]="true" fileName='all-flight-result'></dxo-export>
+
+</dx-data-grid>
