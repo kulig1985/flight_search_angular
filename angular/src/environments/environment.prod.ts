@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  all_flight_result : "http://95.138.193.102:2233/api/getFlightResultByFsinIn?fsinId=2"
+  all_flight_request : "http://95.138.193.102:2233/api/getAllFlightSearchRequest",
+  all_flight_result : "http://95.138.193.102:2233/api/getAllFlightSearchInstanceByFsreId?fsreId=",
+  all_flight_result_details : "http://95.138.193.102:2233/api/getFlightResultByFsinIn?fsinId="
 };

@@ -3,22 +3,144 @@
       <h1 class="header__title">Flight Search</h1>
     </div>
   </header>
-  
+
   <div class="panel">
     <div class="container">
       <div class="table-responsive">
 
+        <h3>Beküldött keresési ígények</h3>
+
         <dx-data-grid
         
-                #allFlightResult
+        #allFlightSearchRequest
+        [showBorders]="true"
+        [showRowLines]="true"
+        [rowAlternationEnabled]="true"
+        [dataSource]="allFlightSearchRequestDataSource"
+        [columnAutoWidth]="true"
+        [allowColumnResizing]="true"
+        [allowColumnReordering]="true"
+        [columnHidingEnabled]="false"
+        (onCellPrepared)="onCellPrepared($event)">
+
+
+        <dxi-column [allowReordering]="false" type="buttons" caption="Müveletek">
+            <dxi-button
+                    text="Megtekint"
+                    hint="Eredmények megtekintése"
+                    [onClick]="showFlightResults">
+            </dxi-button>
+        </dxi-column>
+        <dxi-column caption="Azonosító" dataField="fsreId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Állapot" dataField="boolId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Keresés neve" dataField="searchName" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Indulás reptér" dataField="depAirport" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Indulási intervallum kezdete" dataField="dateFrom" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Indulási intervallum vége" dataField="dateTo" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Minimum éjszakák" dataField="nighInDestFrom" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Maximum éjszakák" dataField="nighInDestTo" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Maximum átszállás" dataField="maxStopOvers" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Felnöttek száma" dataField="adults" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Gyerkek száma" dataField="children" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Csecsemők száma" dataField="infants" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Felnőtt feladott csomagok" dataField="adultHoldBag" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Felnőtt kézi csomagok" dataField="adultHandBag" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Összeghatár" dataField="priceLimit" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Létrehozva" dataField="crDate" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+        
+        
+        
+
+        <dxo-load-panel [enabled]="true"></dxo-load-panel> 
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-header-filter [visible]="true"></dxo-header-filter>
+
+        <dxo-export [enabled]="true" fileName='all-flight-request'></dxo-export>
+        <dxo-column-chooser [enabled]="true" mode="select"></dxo-column-chooser>
+
+
+        </dx-data-grid>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="container">
+      <div class="table-responsive">
+
+        <h3>Futás adatok</h3>
+
+
+        <dx-data-grid
+        
+                #allFlightSearchResultInstance
                 [showBorders]="true"
                 [showRowLines]="true"
                 [rowAlternationEnabled]="true"
-                [dataSource]="allFlightResultDataSource"
+                [dataSource]="allFlightSearchResultInstanceDataSource"
                 [columnAutoWidth]="true"
                 [allowColumnResizing]="true"
                 [allowColumnReordering]="true"
                 [columnHidingEnabled]="false">
+
+                <dxi-column [allowReordering]="false" type="buttons" caption="Müveletek">
+                    <dxi-button
+                            text="Megtekint"
+                            hint="Eredmények megtekintése"
+                            [onClick]="showFlightResultsDetails">
+                    </dxi-button>
+                </dxi-column>
+                <dxi-column caption="Azonosító" dataField="fsinId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Állapot" dataField="statId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Létrehozva" dataField="crDate" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+                <dxi-column caption="Módosítáva" dataField="modDate" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+
+
+                <dxo-load-panel [enabled]="true"></dxo-load-panel> 
+                <dxo-filter-row [visible]="true"></dxo-filter-row>
+                <dxo-header-filter [visible]="true"></dxo-header-filter>
+
+                <dxo-export [enabled]="true" fileName='all-flight-search-result'></dxo-export>
+                <dxo-column-chooser [enabled]="true" mode="select"></dxo-column-chooser>
+
+
+        </dx-data-grid>
+
+    </div>
+    </div>
+    </div>
+
+  
+  <div class="panel">
+    <div class="container">
+      <div class="table-responsive">
+        
+        <h3>Részletes eredmények</h3>
+
+        <dx-data-grid
+        
+                #allFlightSearchResultDetail
+                [showBorders]="true"
+                [showRowLines]="true"
+                [rowAlternationEnabled]="true"
+                [dataSource]="allFlightResultDetailDataSource"
+                [columnAutoWidth]="true"
+                [allowColumnResizing]="true"
+                [allowColumnReordering]="true"
+                [columnHidingEnabled]="false">
+
+
+                <dxi-column caption="Azonosító" dataField="flsrId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Ár" dataField="price" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Indulás oda" dataField="depDateOut" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+                <dxi-column caption="Érkezés oda" dataField="arrDateOut" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+                <dxi-column caption="Légi társaság oda" dataField="airlineOut" [allowSearch]="false" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Cél ország" dataField="countryToOut" [allowSearch]="false" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Cél város" dataField="cityToOut" [allowSearch]="false" [allowEditing]="false" ></dxi-column>
+                <dxi-column caption="Indulás vissza" dataField="depDateBack" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+                <dxi-column caption="Érkezés vissza" dataField="arrDateBack" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+                <dxi-column caption="Légi társaság vissza" dataField="airlineBack" [allowSearch]="false" [allowEditing]="false" ></dxi-column>
 
 
                 <dxo-load-panel [enabled]="true"></dxo-load-panel> 
@@ -35,9 +157,9 @@
     </div>
   </div>
   
-  <div class="panel panel--secondary">
+  <!--<div class="panel panel--secondary">
     <div class="container">
       <p>Secondary panel content goes here.</p>
     </div>
-  </div>
+  </div>-->
   
