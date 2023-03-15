@@ -1,18 +1,43 @@
-<dx-data-grid
-#allFlightResult
-[showBorders]="true"
-[showRowLines]="true"
-[rowAlternationEnabled]="true"
-[dataSource]="allFlightResultDataSource"
-[columnAutoWidth]="true"
-[allowColumnResizing]="true"
-[allowColumnReordering]="true">
+<header class="header">
+    <div class="container">
+      <h1 class="header__title">Flight Search</h1>
+    </div>
+  </header>
+  
+  <div class="panel">
+    <div class="container">
+      <div class="table-responsive">
+
+        <dx-data-grid
+        
+                #allFlightResult
+                [showBorders]="true"
+                [showRowLines]="true"
+                [rowAlternationEnabled]="true"
+                [dataSource]="allFlightResultDataSource"
+                [columnAutoWidth]="true"
+                [allowColumnResizing]="true"
+                [allowColumnReordering]="true"
+                [columnHidingEnabled]="false">
 
 
-<dxo-load-panel [enabled]="false"></dxo-load-panel> 
-<dxo-filter-row [visible]="true"></dxo-filter-row>
-<dxo-header-filter [visible]="true"></dxo-header-filter>
+                <dxo-load-panel [enabled]="true"></dxo-load-panel> 
+                <dxo-filter-row [visible]="true"></dxo-filter-row>
+                <dxo-header-filter [visible]="true"></dxo-header-filter>
 
-<dxo-export [enabled]="true" fileName='all-flight-result'></dxo-export>
+                <dxo-export [enabled]="true" fileName='all-flight-result'></dxo-export>
+                <dxo-column-chooser [enabled]="true" mode="select"></dxo-column-chooser>
 
-</dx-data-grid>
+
+        </dx-data-grid>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel--secondary">
+    <div class="container">
+      <p>Secondary panel content goes here.</p>
+    </div>
+  </div>
+  

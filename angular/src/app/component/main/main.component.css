@@ -1,0 +1,20 @@
+.header {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+  }
+  
+  .header__title {
+    margin: 0;
+    font-size: 32px;
+  }
+  
+  .panel {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    padding: 20px;
+  }
+  
+  .panel--secondary {
+    background-color: #f2f2f2;
+  }
