@@ -1,9 +1,11 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Query, ViewChild } from '@angular/core';
 import { DxDataGridComponent } from 'devextreme-angular';
 import CustomStore from 'devextreme/data/custom_store';
 import { environment } from 'src/environments/environment';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import DataSource from 'devextreme/data/data_source';
+import { QueryGetDto, QueryParam } from 'src/app/model/query-model';
+import { QueryService } from 'src/app/service/query-service';
 
 
 
@@ -30,7 +32,7 @@ export class MainComponent implements OnInit  {
   choosenfsreId : number = 0;
   choosenfsinId : number = 0;
 
-  constructor(private _httpClient: HttpClient) { 
+  constructor(private _httpClient: HttpClient, private queryService: QueryService) { 
 
     this.showFlightResults = this.showFlightResults.bind(this);
     this.showFlightResultsDetails = this.showFlightResultsDetails.bind(this);
@@ -39,15 +41,19 @@ export class MainComponent implements OnInit  {
     let that = this;
 
     this.allFlightSearchRequestStore = new CustomStore({
-      key: 'fsreId',
+      key: 'FSRE_ID',
       loadMode: 'raw',
       cacheRawData: false,
       load: function (loadOptions: any) {
 
-        const all_flight_result_url = environment.all_flight_request;
+        let queryGetDto = that.queryService.createQueryObject('all_valid_request',[]);
+
+        console.log(JSON.stringify(queryGetDto));
+
+        const all_search_request = environment.native_query;
 
         return that._httpClient
-            .get(all_flight_result_url, {})
+            .get(all_search_request, {params: queryGetDto})
             .toPromise()
             .then((result: any) => {
               console.log('all_flight_request result len:' + result.length);
@@ -142,6 +148,16 @@ export class MainComponent implements OnInit  {
   }
 
   ngOnInit(): void {
+
+      /*let queryGetDto = this.queryService.createQueryObject('query_tst',[
+                                                            new QueryParam('fsinId', 'single', ['2']),
+                                                            new QueryParam('airLineOut', 'multiple', ['FR', 'W6'])]);
+
+
+
+      console.log(JSON.stringify(queryGetDto));
+      */
+
   }
 
   onCellPrepared(e : any) {
@@ -168,9 +184,9 @@ export class MainComponent implements OnInit  {
   showFlightResults(e : any) {
     
     console.log("showFlightResults invoked!");
-    console.log(e.row.data.fsreId);
+    console.log(e.row.data.FSRE_ID);
 
-    this.choosenfsreId = e.row.data.fsreId;
+    this.choosenfsreId = e.row.data.FSRE_ID;
 
     this.allFlightSearchResultInstance.instance.getDataSource().reload();
     

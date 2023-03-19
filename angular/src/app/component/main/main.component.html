@@ -31,22 +31,23 @@
                     [onClick]="showFlightResults">
             </dxi-button>
         </dxi-column>
-        <dxi-column caption="Azonosító" dataField="fsreId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Állapot" dataField="boolId" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Keresés neve" dataField="searchName" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Indulás reptér" dataField="depAirport" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Indulási intervallum kezdete" dataField="dateFrom" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Indulási intervallum vége" dataField="dateTo" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Minimum éjszakák" dataField="nighInDestFrom" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Maximum éjszakák" dataField="nighInDestTo" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Maximum átszállás" dataField="maxStopOvers" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Felnöttek száma" dataField="adults" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Gyerkek száma" dataField="children" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Csecsemők száma" dataField="infants" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Felnőtt feladott csomagok" dataField="adultHoldBag" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Felnőtt kézi csomagok" dataField="adultHandBag" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Összeghatár" dataField="priceLimit" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
-        <dxi-column caption="Létrehozva" dataField="crDate" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
+        <dxi-column caption="Azonosító" dataField="FSRE_ID" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Állapot" dataField="BOOL_ID" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Keresés neve" dataField="SEARCH_NAME" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Indulás reptér" dataField="DEP_AIRPORT" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Cél reptér(ek)" width="50" dataField="CITY" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Indulási intervallum kezdete" dataField="DATE_FROM" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Indulási intervallum vége" dataField="DATE_TO" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Minimum éjszakák" dataField="NIGH_IN_DEST_FROM" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Maximum éjszakák" dataField="NIGH_IN_DEST_TO" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Maximum átszállás" dataField="MAX_STOP_OVERS" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Felnöttek száma" dataField="ADULTS" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Gyerkek száma" dataField="CHILDREN" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Csecsemők száma" dataField="INFANTS" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Felnőtt feladott csomagok" dataField="ADULT_HOLD_BAG" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Felnőtt kézi csomagok" dataField="ADULT_HAND_BAG" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Összeghatár" dataField="PRICE_LIMIT" [allowSearch]="true" [allowEditing]="false" ></dxi-column>
+        <dxi-column caption="Létrehozva" dataField="CR_DATE" [allowSearch]="false" [allowEditing]="false" dataType="date" [format]="{ type: 'yyyy.MM.dd HH:mm:ss' }" ></dxi-column>
         
         
         

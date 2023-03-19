@@ -1,0 +1,14 @@
+<div class="posts-container">
+    <div class="card" *ngFor="let post of posts">
+      <div class="card-title">{{ post.title }}</div>
+      <img [src]="post.image" alt="{{ post.title }}" class="card-image" />
+      <div class="card-details">
+        <div class="post-info">
+          <span class="post-date">Posted: {{ post.postDate | date }}</span>
+          <span class="post-from-to">From {{ post.from }} to {{ post.to }}</span>
+          <span class="post-departure-dates">Departure: {{ post.departureDate | date }} - {{ post.returnDate | date }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
