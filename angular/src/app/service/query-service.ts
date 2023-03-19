@@ -18,6 +18,8 @@ export class QueryService {
 
     queryGetDto.params = params;
 
+    console.log(JSON.stringify(queryGetDto))
+
     return new HttpParams().set("queryGetDto" , JSON.stringify(queryGetDto))
 
   }

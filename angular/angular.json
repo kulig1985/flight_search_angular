@@ -31,13 +31,21 @@
             ],
             "styles": [
               "node_modules/devextreme/dist/css/dx.light.css",
-              "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles/animate.css",
+              "src/styles/icomoon.css",
+              "src/styles/bootstrap.min.css",
+              "src/styles/style.css"
+              
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/modernizr/src/Modernizr.js"
+              "src/js/modernizr-2.6.2.min.js",
+              "src/js/jquery.min.js",
+              "src/js/jquery.easing.1.3.js",
+              "src/js/bootstrap.min.js",
+              "src/js/jquery.waypoints.min.js",
+              "src/js/main.js"
 
             ]
           },
