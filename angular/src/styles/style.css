@@ -312,7 +312,7 @@ p {
     display: -moz-inline-stack;
     display: inline-block;
     zoom: 1;
-    *display: inline;
+    display: inline;
   }
 }
 .fh5co-post-prev span,
@@ -563,7 +563,7 @@ figure figcaption {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 #fh5co-offcanvas .fh5co-close-offcanvas > span > span {
   top: 7px;
@@ -661,7 +661,7 @@ figure figcaption {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   width: 25px;
   height: 3px;
   color: #535659;

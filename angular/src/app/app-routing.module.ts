@@ -5,18 +5,9 @@ import { MainComponent } from './component/main/main.component';
 import { PostComponent } from './component/post/post.component';
 
 const routes: Routes = [
-  { path:'',
-    component:MainComponent,
-    data : {title:'Main', side: false},
-    children : []},
-    { path:'post',
-    component:PostComponent,
-    data : {title:'Post', side: false},
-    children : []},
-    { path:'feed',
-    component:FeedComponent,
-    data : {title:'Feed', side: false},
-    children : []}
+  { path:'main',component:MainComponent},
+  { path:'post', component:PostComponent },
+  { path:'', component:FeedComponent}
 
 ];
 
