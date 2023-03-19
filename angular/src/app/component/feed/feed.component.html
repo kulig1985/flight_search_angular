@@ -1,6 +1,6 @@
 
 	<body>
-	<div id="fh5co-offcanvas">
+	<!--<div id="fh5co-offcanvas">
 		<a href="#" class="fh5co-close-offcanvas js-fh5co-close-offcanvas"><span><i class="icon-cross3"></i> <span>Close</span></span></a>
 		<div class="fh5co-bio">
 			<figure>
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- END #fh5co-offcanvas -->
+
 	<header id="fh5co-header">
 		
 		<div class="container-fluid">
@@ -48,34 +48,66 @@
 					<li><a href="#"><i class="icon-instagram"></i></a></li>
 				</ul>
 				<div class="col-lg-12 col-md-12 text-center">
-					<h1 id="fh5co-logo"><a href="index.html">Hova repüljek? <!--<sup>TM</sup>--></a></h1>
+					<h1 id="fh5co-logo"><a href="index.html">Hova repüljek? <sup>TM</sup></a></h1>
 				</div>
 
 			</div>
 		
 		</div>
 
-	</header>
-	<!-- END #fh5co-header -->
+	</header> -->
+
+    <mat-toolbar>
+        <mat-form-field style="width: 100%" floatLabel='never'>
+        <input  
+               matInput 
+               [(ngModel)]="searchText" 
+               placeholder="Search" 
+               autocomplete="off" >
+      </mat-form-field>
+      </mat-toolbar>
+
     <div *ngIf="feeds.length > 0"></div>
 	<div class="container-fluid">
-        
-		<div class="row fh5co-post-entry">
-        
-			<article *ngFor="let feed of feeds" class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 "> <!--animate-box-->
-				<figure>
-					<!--<a href="#"><img src="{{post.image}}" alt="Image" class="img-responsive"></a>-->
-                    <img src="https://picsum.photos/id/237/400/300" alt="Image" class="img-responsive">
-				</figure>
-				<span class="fh5co-meta">{{feed.PRICE}},-Ft</span>
-				<!--<h2 class="fh5co-article-title"><a href="#">{{post.from}} -> {{post.to}}</a></h2>-->
-                <h2 class="fh5co-article-title">{{feed.CITY_FROM_OUT}} -> {{feed.CITY_TO_OUT}}</h2>
-				<span class="fh5co-meta fh5co-date">{{feed.DEP_DATE_OUT}} -> {{feed.DEP_DATE_BACK}}</span>
-			</article>
 
-		
-		</div>
+        <div *ngIf="contentLoading" class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+            
+          </div>
+          <div *ngIf="contentLoading" class="content-text">Content loading.</div> 
+
+          <div class="card-container">
+
+            <div class="card-container">
+
+                <div *ngFor="let feed of feeds | filter : searchText" class="card">
+                  <div class="card-img">
+                    <img src="https://picsum.photos/id/237/400/300" alt="Product Image">
+                  </div>
+                  <div class="card-details">
+                    <h1>{{feed.CITY_TO_OUT}}</h1>
+                    <div class="card-row">
+                      <span class="card-price">Price: {{feed.PRICE}}</span>
+                      <span class="card-date">Go: {{feed.DEP_DATE_OUT.substring(0,16)}}</span>
+                      <span class="card-date">Back: {{feed.DEP_DATE_BACK.substring(0,16)}}</span>
+                    </div>
+                    <div class="card-textarea">
+                      <p>Lets fly to {{feed.COUNTRY_TO_OUT}} - {{feed.CITY_TO_OUT}} with airline: {{feed.AIRLINE_OUT}} and come back with: {{feed.AIRLINE_BACK}}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                
+              </div>
+        
+
     </div>
+</div>
 
 	<footer id="fh5co-footer">
 		<p><small>&copy; 2023. Kebodev. All Rights Reserverd.</small></p>

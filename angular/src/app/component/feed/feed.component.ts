@@ -17,7 +17,11 @@ export class FeedComponent implements OnInit {
 
   //https://picsum.photos/id/237/400/300
 
-  feeds: FeedModel[] = [{
+  feeds: FeedModel[] = [];
+  searchText: any;
+  contentLoading: boolean = true;
+
+  /*feeds: FeedModel[] = [{
     FLSR_ID: "188558",
     FSIN_ID: "31",
     ID: "0b7714fd4c4c0000933713ac_0|14fd0b774c4f00003608b3bd_0",
@@ -49,7 +53,7 @@ export class FeedComponent implements OnInit {
     SEC_PRICE: "15292.0",
     TH_PRICE: "15290.0",
     FO_PRICE: "15290.0"
-  }];
+  }];*/
   isloadCompleted = false;
 
 
@@ -72,11 +76,12 @@ export class FeedComponent implements OnInit {
               this.feeds = response;
               this.isloadCompleted = true;
               console.log(this.feeds);
+              this.contentLoading = false;
               
               //this.contentWayPoint();
 
               //scrolledWindow();
-              contentWayPoint();
+              //contentWayPoint();
               
 
 
