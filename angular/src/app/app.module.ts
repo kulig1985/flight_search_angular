@@ -16,6 +16,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TradeComponent } from './component/trade/trade.component';
+import { HeetComponent } from './component/heet/heet.component';
+import { FlightTreeComponent } from './component/flight-tree/flight-tree.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FlighListComponent } from './component/fligh-list/fligh-list.component';
+import { CityFilterPipe } from './component/flight-tree/city-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MainComponent,
     PostComponent,
     FeedComponent,
-    FilterPipe
+    FilterPipe,
+    TradeComponent,
+    HeetComponent,
+    FlightTreeComponent,
+    FlighListComponent,
+    CityFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule
 
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],

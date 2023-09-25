@@ -1,0 +1,17 @@
+<div class="chart-container" id="tradingview-chart"></div>
+
+
+<div>
+    Open orders:
+    <ul>
+        <li *ngFor="let item of openOrders">{{item.orderId}} - side: {{item.side}} - price: {{item.price}} - value: {{item.price * item.origQty}}</li>
+    </ul>
+</div>
+<div>
+    Closed orders:
+    <ul>
+        <li *ngFor="let item of closedOrders">{{item.orderId}} - side: {{item.side}} - price: {{item.price}} - value: {{item.price * item.executedQty}}</li>
+    </ul>
+</div>
+
+

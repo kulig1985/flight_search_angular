@@ -1,0 +1,96 @@
+<section class="py-6 sm:py-12 dark:bg-gray-800 dark:text-gray-100">
+
+    <!--<div class="p-6 py-12 dark:bg-violet-400 dark:text-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <h2 class="text-center text-6xl tracki font-bold">Repül
+                    <br class="sm:hidden">a család
+                </h2>
+                <div class="space-x-2 text-center py-2 lg:py-0">
+                    <span>2 gyerek 2 felnőtt, 1 nagy börönd két kézi bőrönd</span>
+                    <span class="font-bold text-lg">Garantált szopás</span>
+                </div>
+                        <input [(ngModel)]="searchText" type="text" name="url" id="url" placeholder="város?" class="px-5 mt-4 lg:mt-0 py-3 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400">
+                        <button (click)="loadFlightData(true)" type="button" class="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">Frissítés</button>
+
+            </div>
+        </div>
+    </div>-->
+    
+
+    <header class="p-4 dark:bg-gray-800 dark:text-gray-100">
+
+
+         
+        <div class="container flex justify-between h-16 mx-auto">
+        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Repül a</span> család</h1>
+        <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">2 gyerek 2 felnőtt, 1 nagy börönd két kézi bőrönd.</p>
+        </div>
+
+        <div class="container flex justify-between h-16 mx-auto">
+            <div class="flex items-center md:space-x-4">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                        <button type="submit" title="Search" class="p-1 focus:outline-none focus:ring">
+                            <svg fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4 dark:text-gray-100">
+                                <path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
+                            </svg>
+                        </button>
+                    </span>
+                    <input [(ngModel)]="searchText"  type="search" name="Search" placeholder="Keress várost" class="w-80 py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900">
+                </div>
+                <button type="button" class="hidden px-6 py-2 font-semibold rounded lg:block dark:bg-violet-400 dark:text-gray-900" (click)="loadFlightData(true)">Frissítés</button>
+            </div>
+        </div>
+    </header>
+
+    <!--<div class="text-center" *ngIf="isLoading">
+        <div role="status">
+            <svg aria-hidden="true" class="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+            </svg>
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>-->
+
+	<div class="container p-6 mx-auto space-y-8">
+		<!--<div class="space-y-2 text-center">
+			<h2 class="text-3xl font-bold">Repül a család!?</h2>
+			<p class="font-serif text-sm dark:text-gray-400">2 felnőtt, 2 gyerek, garantált szopás!</p>
+		</div>-->
+
+
+		<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+
+            <ng-container *ngIf="isLoading">
+            <div class="flex flex-col dark:bg-gray-900 animate-pulse" *ngFor="let _ of [].constructor(20)" >
+                <div class="h-48 rounded-t dark:bg-gray-700" ></div>
+                <div class="flex-1 px-4 py-8 space-y-4 sm:p-8 dark:bg-gray-900">
+                    <div class="w-full h-6 rounded dark:bg-gray-700"></div>
+                    <div class="w-full h-6 rounded dark:bg-gray-700"></div>
+                    <div class="w-3/4 h-6 rounded dark:bg-gray-700"></div>
+                </div>
+            </div>
+            </ng-container>
+
+			<article class="flex flex-col dark:bg-gray-900" *ngFor="let flight of flightsData | cityFilter : searchText">
+				<a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
+					<img alt="" class="object-cover w-full h-52 dark:bg-gray-500" src="https://source.unsplash.com/200x200/?{{ flight.text }}?1">
+				</a>
+				<div class="flex flex-col flex-1 p-6">
+                    <a rel="noopener noreferrer" href="javascript:void(0);" (click)="navigateToList(flight)" 
+                            class="text-xs tracki uppercase hover:underline dark:text-violet-400">{{ flight.text }}</a>
+					<h3 class="flex-1 py-2 text-lg font-semibold leadi">{{flight.items[0].price}},-Ft-tól</h3>
+                    <!--<button type="button" 
+                class="flex items-center justify-center w-full p-3 font-semibold tracki rounded-md dark:bg-violet-400 dark:text-gray-900" 
+                (click)="navigateToList(flight)">Mik vannak?</button>-->
+					<div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+						<span>{{flight.items[0].days}} nap</span>
+						<span>{{flight.items[0].flightNumber}} repülés</span>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
